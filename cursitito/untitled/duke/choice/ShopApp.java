@@ -58,17 +58,12 @@ public class ShopApp {
 
         Customer c1 =new Customer("Pinky");
         cart.setCustomer(c1);
-        Clothes item1 = new Clothes();
-        Clothes item2 = new Clothes();
+        Clothes item1 = new Clothes("Blue Jacket", 20.9, "M");
+        Clothes item2 = new Clothes("Orange T-shirt", 10.5, "S");
         Clothes item3 = new Clothes("Green Scarf", 5, "S");
 
-        item1.setDescription("Blue Jacket");
-        item1.setPrice(20.9);
         cart.addToCart(item1);
 
-        item2.setDescription("Orange T-shirt");
-        item2.setPrice(10.5);
-        item2.setSize("S");
         cart.addToCart(item2);
 
         cart.addToCart(item3);
