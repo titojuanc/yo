@@ -4,6 +4,8 @@ public class Clothes {
     private String description;
     private String size;
     private double price;
+    private static double minPrice=0.0;
+    private static double taxRate=0.0;
 
     public Clothes(String description, double price, String size){
         this.description=description;
@@ -34,6 +36,19 @@ public class Clothes {
 
     public double getPrice(double tax) { return price*tax; }
 
+    public static double getMinPrice() {return minPrice;}
+
+    public void setMinPrice(double minPrice) { this.minPrice = minPrice; }
+
+    public double getTaxRate() { return taxRate; }
+
+    public void setTaxRate(double taxRate) { this.taxRate = taxRate; }
+
+    @Override
+    public String toString() {
+       return (this.description+", "+this.size+", "+this.price);
+    }
+
     public void setPrice(double price) {
         if (price<10){
             this.price=10;
@@ -43,6 +58,8 @@ public class Clothes {
         }
 
     }
+
+
 
     public void showDetails() {
         System.out.println(this.description+", "+this.size+", "+this.price);

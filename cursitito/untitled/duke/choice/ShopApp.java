@@ -34,6 +34,12 @@ public class ShopApp {
         this.clothes.add(clothe);
     }
 
+    public void listClothes(){
+        for (Clothes clothe : clothes){
+            System.out.println(clothe.toString());
+        }
+    }
+
     public void total(double tax){
         double total=0;
         System.out.println(this.customer.getName());
@@ -50,6 +56,7 @@ public class ShopApp {
     }
 
     public static void main(String[] args) {
+        System.out.println("Minimum price value = "+Clothes.getMinPrice());
         ShopApp cart = new ShopApp();
         double tax=1.2;
         double total;
@@ -67,6 +74,7 @@ public class ShopApp {
         cart.addToCart(item2);
 
         cart.addToCart(item3);
+        cart.listClothes();
 
         System.out.println(c1.getName());
         cart.total(tax);
