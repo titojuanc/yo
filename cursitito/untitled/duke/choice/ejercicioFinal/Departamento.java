@@ -1,7 +1,5 @@
 package duke.choice.ejercicioFinal;
 
-import duke.choice.EmployeeNotInDeptException;
-
 import java.util.ArrayList;
 
 public class Departamento {

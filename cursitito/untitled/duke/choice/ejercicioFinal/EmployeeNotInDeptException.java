@@ -1,4 +1,4 @@
-package duke.choice;
+package duke.choice.ejercicioFinal;
 
 public class EmployeeNotInDeptException extends RuntimeException {
     public EmployeeNotInDeptException(String message) {
