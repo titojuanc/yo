@@ -9,17 +9,17 @@ import java.util.ArrayList;
 import java.util.function.BiConsumer;
 
 public class Itemlist  implements Handler {
-    private ArrayList<ClothingNew>items;
+    private ArrayList<Clothes>items;
 
-    public Itemlist(ArrayList<ClothingNew> items) {
+    public Itemlist(ArrayList<Clothes> items) {
         this.items = items;
     }
 
-    public ArrayList<ClothingNew> getItems() {
+    public ArrayList<Clothes> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<ClothingNew> items) {
+    public void setItems(ArrayList<Clothes> items) {
         this.items = items;
     }
 
@@ -28,7 +28,7 @@ public class Itemlist  implements Handler {
         serverResponse.status(Http.Status.OK_200);
         serverResponse.headers().put("Content Type","text/plain: charset=UTF-8");
         StringBuilder result = new StringBuilder();
-        for (ClothingNew i: items){
+        for (Clothes i: items){
             result.append(i+"/n");
 
 
