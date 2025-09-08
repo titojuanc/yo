@@ -2,7 +2,7 @@ package duke.choice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import io.heldion.webserver.*;
+//import io.heldion.webserver.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -41,25 +41,25 @@ public class ShopApp {
         this.clothes.add(clothe);
     }
 
-    public void webserver(){
-        try {
-            ItemList list = new ItemList(items);
-            Routing routing = Routing.builder()
-                    .get("/items", list)
-                    .build();
-
-            ServerConfiguration config = ServerConfiguration.builder()
-                    .bindAddress(InetAddress.getLocalHost())
-                    .port(8888)
-                    .build();
-
-            WebServer ws = WebServer.create(config, routing);
-            ws.start();
-        } catch (UnknownHostException ex) {
-            ex.printStackTrace();
-        }
-
-    }
+   // public void webserver(){
+   //     try {
+   //         ItemList list = new ItemList(items);
+   //         Routing routing = Routing.builder()
+   //                 .get("/items", list)
+   //                 .build();
+   //
+   //         ServerConfiguration config = ServerConfiguration.builder()
+   //                 .bindAddress(InetAddress.getLocalHost())
+   //                 .port(8888)
+   //                 .build();
+   //
+   //         WebServer ws = WebServer.create(config, routing);
+   //         ws.start();
+   //     } catch (UnknownHostException ex) {
+   //         ex.printStackTrace();
+   //     }
+   //
+   // }
 
     public void listClothes(){
         for (Clothes clothe : clothes){
@@ -132,7 +132,13 @@ public class ShopApp {
 
         System.out.println("Promedio de precio por prenda: " + cart.promedio());
 
-        System.out.println("Items ordenados por descripcion: " + Arrays.sort(cart.getClothes()););
+        Clothes[] items = {item1, item2, item3};
+        Arrays.sort(items);
+
+        System.out.println("Items ordenados por descripcion: ");
+        for (Clothes c : items){
+            System.out.println(c.toString());
+        }
 
 
     }
