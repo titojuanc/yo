@@ -2,6 +2,9 @@ package duke.choice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import io.heldion.webserver.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 public class ShopApp {
     private ArrayList<Clothes> clothes;
@@ -33,6 +36,26 @@ public class ShopApp {
 
     public void addToCart(Clothes clothe){
         this.clothes.add(clothe);
+    }
+
+    public void webserver(){
+        try {
+            ItemList list = new ItemList(items);
+            Routing routing = Routing.builder()
+                    .get("/items", list)
+                    .build();
+
+            ServerConfiguration config = ServerConfiguration.builder()
+                    .bindAddress(InetAddress.getLocalHost())
+                    .port(8888)
+                    .build();
+
+            WebServer ws = WebServer.create(config, routing);
+            ws.start();
+        } catch (UnknownHostException ex) {
+            ex.printStackTrace();
+        }
+
     }
 
     public void listClothes(){
