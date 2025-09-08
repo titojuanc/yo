@@ -1,6 +1,7 @@
 package duke.choice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ShopApp {
     private ArrayList<Clothes> clothes;
@@ -104,6 +105,9 @@ public class ShopApp {
         cart.total(tax);
 
         System.out.println("Promedio de precio por prenda: " + cart.promedio());
+
+        System.out.println("Items ordenados por descripcion: " + Arrays.sort(cart.getClothes()););
+
 
     }
 }
