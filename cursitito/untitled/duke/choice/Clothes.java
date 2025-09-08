@@ -38,11 +38,11 @@ public class Clothes {
 
     public static double getMinPrice() {return minPrice;}
 
-    public void setMinPrice(double minPrice) { this.minPrice = minPrice; }
+    public static void setMinPrice(double precioMin) { minPrice = precioMin; }
 
-    public double getTaxRate() { return taxRate; }
+    public static double getTaxRate() { return taxRate; }
 
-    public void setTaxRate(double taxRate) { this.taxRate = taxRate; }
+    public static void setTaxRate(double tax) { taxRate = tax; }
 
     @Override
     public String toString() {

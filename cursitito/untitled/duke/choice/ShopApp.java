@@ -55,10 +55,34 @@ public class ShopApp {
         System.out.println("Total: "+total);
     }
 
+    public double promedio(){
+        double avg = 0;
+        int cont =0;
+        for (Clothes c : this.clothes){
+            if (c.getSize().equals("L")){
+                cont++;
+                avg= avg + c.getPrice(Clothes.getTaxRate());
+            }
+        }
+        try {
+            return avg/cont;
+        } catch (ArithmeticException e){
+            System.out.println("No hay items de talle  L. " + e.getMessage());
+            return 0;
+        }
+
+        //  El algoritmo podría evitar la excepción si se chequea con un IF si
+        //  la variable cont está en 0. Si lo está, entonces devuelve 0 directamente.
+        //  (más un mensaje de que no hay items talle L)
+    }
+
+
+
     public static void main(String[] args) {
         System.out.println("Minimum price value = "+Clothes.getMinPrice());
         ShopApp cart = new ShopApp();
         double tax=1.2;
+        Clothes.setTaxRate(tax);
         double total;
         int measurement = 3;
 
@@ -78,5 +102,8 @@ public class ShopApp {
 
         System.out.println(c1.getName());
         cart.total(tax);
+
+        System.out.println("Promedio de precio por prenda: " + cart.promedio());
+
     }
 }

@@ -1,3 +1,5 @@
+package duke.choice;
+
 public class Employee{
     private String nombre;
     private Departamento departamento;
